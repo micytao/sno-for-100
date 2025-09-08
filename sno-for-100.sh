@@ -88,7 +88,7 @@ fi
 # set architecture for install-config
 [[ "$CYGWIN_ON" == "yes" ]] && architecture=amd64
 [[ "$system_os_arch" == "x86_64" ]] && architecture=amd64
-[[ "$system_os_arch" == "aarch64" ]] && architecture=arm64
+[[ "$system_os_arch" == "aarch64" ]] && architecture=amd64
 #[[ "$system_os_arch" == "aarch64" ]] && architecture=arm64
 # sanity environment section end
 
@@ -320,7 +320,7 @@ download_openshift_installer() {
 
 download_openshift_cli() {
     #local ret=$(curl --write-out "%{http_code}" https://mirror.openshift.com/pub/openshift-v4/${system_os_arch}/clients/ocp/${OPENSHIFT_VERSION}/openshift-client-${system_os_flavor}.tar.gz -o ${RUN_DIR}/openshift-client-${system_os_flavor}.tar.gz)
-    local ret=$(curl --write-out "%{http_code}" https://mirror.openshift.com/pub/openshift-v4/multi/clients/ocp/${OPENSHIFT_VERSION}/arm64/openshift-client-${system_os_flavor}-amd64-4.19.6.tar.gz -o ${RUN_DIR}/openshift-client-${system_os_flavor}.tar.gz)
+    local ret=$(curl --write-out "%{http_code}" https://mirror.openshift.com/pub/openshift-v4/aarch64/clients/ocp/${OPENSHIFT_VERSION}/openshift-client-${system_os_flavor}.tar.gz -o ${RUN_DIR}/openshift-client-${system_os_flavor}.tar.gz)
     if [ "$ret" != "200" ]; then
         echo -e "🕱${RED}Failed - to download openshift-client-${system_os_flavor}.tar.gz ?.${NC}"
         return $ret
