@@ -88,7 +88,7 @@ fi
 # set architecture for install-config
 [[ "$CYGWIN_ON" == "yes" ]] && architecture=amd64
 [[ "$system_os_arch" == "x86_64" ]] && architecture=amd64
-[[ "$system_os_arch" == "aarch64" ]] && architecture=amd64
+[[ "$system_os_arch" == "aarch64" ]] && architecture=arm64
 #[[ "$system_os_arch" == "aarch64" ]] && architecture=arm64
 # sanity environment section end
 
