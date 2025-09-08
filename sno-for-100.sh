@@ -306,7 +306,7 @@ download_ec2_converter() {
 
 download_openshift_installer() {
     #local ret=$(curl --write-out "%{http_code}" https://mirror.openshift.com/pub/openshift-v4/${system_os_arch}/clients/ocp/${OPENSHIFT_VERSION}/openshift-install-${system_os_flavor}.tar.gz -o ${RUN_DIR}/openshift-install-${system_os_flavor}.tar.gz)
-    local ret=$(curl --write-out "%{http_code}" https://mirror.openshift.com/pub/openshift-v4/multi/clients/ocp/${OPENSHIFT_VERSION}/openshift-install-${system_os_flavor}.tar.gz -o ${RUN_DIR}/openshift-install-${system_os_flavor}.tar.gz)
+    local ret=$(curl --write-out "%{http_code}" https://mirror.openshift.com/pub/openshift-v4/multi/clients/ocp/${OPENSHIFT_VERSION}/arm64/openshift-install-${system_os_flavor}.tar.gz -o ${RUN_DIR}/openshift-install-${system_os_flavor}.tar.gz)
     if [ "$ret" != "200" ]; then
         echo -e "🕱${RED}Failed - to download openshift-install-${system_os_flavor}.tar.gz ?.${NC}"
         return $ret
